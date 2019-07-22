@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjercicioHerencia1">
+  <ClassDiagramComponents>
+    <Class name="AppPedido" package="ejercicioherencia1" visibility="public" xPosition="554.0" yPosition="580.0">
+      <Fields>
+        <Field name="objp" type="Pedidos" visibility="package" isStatic="true"/>
+        <Field name="pd" type="PedidoDelivery" visibility="package" isStatic="true"/>
+        <Field name="pm" type="PedidoMesa" visibility="package" isStatic="true"/>
+        <Field name="objpro" type="Producto" visibility="package" isStatic="true"/>
+        <Field name="LP" type="ListaProducto" visibility="package" isStatic="true"/>
+        <Field name="LPE" type="ListaPedidos" visibility="package" isStatic="true"/>
+        <Field name="consola" type="BufferedReader" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="registro" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="pedidodelivery" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="pedidoMesa" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="leerPedido" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="listaProductos" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ListaPedidos" package="ejercicioherencia1" visibility="public" xPosition="174.0" yPosition="541.0">
+      <Fields>
+        <Field name="elem" type="Pedidos" visibility="private"/>
+        <Field name="cantidad" type="int" visibility="private"/>
+        <Field name="max" type="int" visibility="private"/>
+        <Field name="delta" type="int" visibility="package" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="Adicionar" returnType="void" visibility="public">
+          <Argument type="Pedidos" name="dato"/>
+        </Method>
+        <Method name="crecer" returnType="void" visibility="public"/>
+        <Method name="reporte1" returnType="void" visibility="public"/>
+        <Method name="reporte2" returnType="void" visibility="public"/>
+        <Method name="reporte3" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ListaProducto" package="ejercicioherencia1" visibility="public" xPosition="560.0" yPosition="972.0">
+      <Fields>
+        <Field name="elem" type="Producto" visibility="private"/>
+        <Field name="cantidad" type="int" visibility="private"/>
+        <Field name="max" type="int" visibility="private"/>
+        <Field name="delta" type="int" visibility="package" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="adicionar" returnType="void" visibility="public">
+          <Argument type="Producto" name="dato"/>
+        </Method>
+        <Method name="crecer" returnType="void" visibility="public"/>
+        <Method name="mostrarProducto" returnType="void" visibility="public"/>
+        <Method name="getElem" returnType="Producto[]" visibility="public"/>
+        <Method name="getCantidad" returnType="int" visibility="public"/>
+        <Method name="getMax" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PedidoDelivery" package="ejercicioherencia1" visibility="public" xPosition="455.0" yPosition="70.0">
+      <Fields>
+        <Field name="costoEntrega" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cod"/>
+          <Argument type="Calendar" name="fecha"/>
+          <Argument type="String" name="cliente"/>
+          <Argument type="double" name="costo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarPedidosDelivery" returnType="void" visibility="public"/>
+        <Method name="costoTotal" returnType="double" visibility="public"/>
+        <Method name="getCostoEntrega" returnType="double" visibility="public"/>
+        <Method name="setCostoEntrega" returnType="void" visibility="public">
+          <Argument type="double" name="costoEntrega"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PedidoMesa" package="ejercicioherencia1" visibility="public" xPosition="1398.0" yPosition="557.0">
+      <Fields>
+        <Field name="propinaMesa" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cod"/>
+          <Argument type="Calendar" name="fecha"/>
+          <Argument type="String" name="cliente"/>
+          <Argument type="double" name="costo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarPedidosMesa" returnType="void" visibility="public"/>
+        <Method name="costoTotal" returnType="double" visibility="public"/>
+        <Method name="getPropinaMesa" returnType="double" visibility="public"/>
+        <Method name="setPropinaMesa" returnType="void" visibility="public">
+          <Argument type="double" name="propinaMesa"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pedidos" package="ejercicioherencia1" visibility="public" xPosition="992.0" yPosition="70.0">
+      <Fields>
+        <Field name="codigoPedido" type="int" visibility="private"/>
+        <Field name="fechaPedido" type="Calendar" visibility="private"/>
+        <Field name="clientePedido" type="String" visibility="private"/>
+        <Field name="costoPedido" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cod"/>
+          <Argument type="Calendar" name="fecha"/>
+          <Argument type="String" name="cliente"/>
+          <Argument type="double" name="costo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarDatos" returnType="void" visibility="public"/>
+        <Method name="costoTotal" returnType="double" visibility="public"/>
+        <Method name="mostrarFecha" returnType="String" visibility="public"/>
+        <Method name="getCodigoPedido" returnType="int" visibility="public"/>
+        <Method name="setCodigoPedido" returnType="void" visibility="public">
+          <Argument type="int" name="codigoPedido"/>
+        </Method>
+        <Method name="getFechaPedido" returnType="Calendar" visibility="public"/>
+        <Method name="setFechaPedido" returnType="void" visibility="public">
+          <Argument type="Calendar" name="fechaPedido"/>
+        </Method>
+        <Method name="getClientePedido" returnType="String" visibility="public"/>
+        <Method name="setClientePedido" returnType="void" visibility="public">
+          <Argument type="String" name="cliente"/>
+        </Method>
+        <Method name="getCostoPedido" returnType="double" visibility="public"/>
+        <Method name="setCostoPedido" returnType="void" visibility="public">
+          <Argument type="double" name="costoTotal"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="ejercicioherencia1" visibility="public" xPosition="1398.0" yPosition="837.0">
+      <Fields>
+        <Field name="codigoProducto" type="int" visibility="private"/>
+        <Field name="nombreProducto" type="String" visibility="private"/>
+        <Field name="costoProducto" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="float" name="costo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigoProducto" returnType="int" visibility="public"/>
+        <Method name="setCodigoProducto" returnType="void" visibility="public">
+          <Argument type="int" name="codigoProducto"/>
+        </Method>
+        <Method name="getNombreProducto" returnType="String" visibility="public"/>
+        <Method name="setNombreProducto" returnType="void" visibility="public">
+          <Argument type="String" name="nombreProducto"/>
+        </Method>
+        <Method name="getCostoProducto" returnType="float" visibility="public"/>
+        <Method name="setCostoProducto" returnType="void" visibility="public">
+          <Argument type="float" name="costoProducto"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="elem" source="ejercicioherencia1.ListaPedidos" target="ejercicioherencia1.Pedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="LPE" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.ListaPedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaPedidos"/>
+    <UseRelation source="ejercicioherencia1.ListaProducto" target="ejercicioherencia1.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="objpro" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="objp" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.Pedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="LP" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.ListaProducto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaProducto"/>
+    <IsRelation name="is" source="ejercicioherencia1.PedidoDelivery" target="ejercicioherencia1.Pedidos"/>
+    <IsRelation name="is" source="ejercicioherencia1.PedidoMesa" target="ejercicioherencia1.Pedidos"/>
+    <HasRelation name="elem" source="ejercicioherencia1.ListaProducto" target="ejercicioherencia1.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ejercicioherencia1.ListaPedidos" target="ejercicioherencia1.Pedidos" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pd" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.PedidoDelivery" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pm" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.PedidoMesa" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
