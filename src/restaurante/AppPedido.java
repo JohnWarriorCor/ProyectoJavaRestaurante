@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,17 +25,9 @@ public class AppPedido {
         // System.out.print(objp.getCodigoPedido()+"\tcosto"+objp.costoTotal());
         int opc;
         do{
-            System.out.println("==============================================");
-            System.out.println("===================PEDIDOS====================");
-            System.out.println("==============================================");
-            System.out.println("1. REGISTAR PEDIDOS");
-            System.out.println("2. MOSTRAR PEDIDOS");
-            System.out.println("3. REPORTE 1:INGRESO TOTAL DE PEDIDOS POR TIPO");
-            System.out.println("4. REPORTE 2:INGRESOS ADICIONALES");
-            System.out.println("5. SALIR");
             do{
-                System.out.print("Ingrese opcion:");
-                opc=Integer.parseInt(consola.readLine());
+                JOptionPane.showMessageDialog(null, "MENÚ DE INICIO");
+                opc =Integer.parseInt( JOptionPane.showInputDialog(null, "INGRESE OPCION:\n1. REGISTAR PEDIDOS\n2. MOSTRAR PEDIDOS\n3. REPORTE 1: INGRESO TOTAL DE PEDIDOS POR TIPO\n4. REPORTE 2: INGRESOS ADICIONALES\n5. SALIR "));
             }while(!(opc>0 & opc<=5));
             switch(opc){
                 case 1:
@@ -50,7 +43,7 @@ public class AppPedido {
                     LPE.reporte3();
                     break;
                 case 5:
-                    System.out.println("FIN DEL REGISTRO");
+                    JOptionPane.showMessageDialog(null, "FIN DEL REGISTRO");
                     break;
             }
         }while(!(opc==5));
@@ -58,15 +51,9 @@ public class AppPedido {
     public static void registro() throws IOException{
         int op;
         do{
-            System.out.println("=============================");
-            System.out.println("=====REGISTRO DE PEDIDOS=====");
-            System.out.println("=============================");
-            System.out.println("1. PEDIDOS DE MESA");
-            System.out.println("2. PEDIDOS DE DELIVERY");;
-            System.out.println("3. SALIR");
+            JOptionPane.showMessageDialog(null, "MENÚ DE PEDIDOS");
             do{
-                System.out.print("Ingrese opcion:");
-                op=Integer.parseInt(consola.readLine());
+                op =Integer.parseInt( JOptionPane.showInputDialog(null, "INGRESE OPCION:\n1. PEDIDOS DE MESA\n2. PEDIDOS DOMICILIO\n3. SALIR"));
             }while(!(op>0 & op<=3));
             switch(op){
                 case 1:
@@ -102,45 +89,32 @@ public class AppPedido {
         Calendar fecha=Calendar.getInstance();
         //Pedidos objp=new Pedidos();
         do{
-            System.out.print("Codigo:");
-            objp.setCodigoPedido(Integer.parseInt(consola.readLine()));
+            objp.setCodigoPedido((Integer.parseInt(JOptionPane.showInputDialog(null, "Código"))));
         }while(!(objp.getCodigoPedido()>=0));
-
-        System.out.print("Cliente:");
-        objp.setClientePedido(consola.readLine());
-        System. out.println("FECHA:");
+        objp.setClientePedido(JOptionPane.showInputDialog(null, "Cliente"));
+        JOptionPane.showMessageDialog(null, "FECHA");
         do{
-            System.out.print("Dia:");
-            dd=Integer.parseInt(consola.readLine());
+            dd = Integer.parseInt(JOptionPane.showInputDialog(null, "Dia"));
         }while(!(dd>0 & dd<=31));
         do{
-            System.out.print("Mes:");
-            mm=Integer.parseInt(consola.readLine());
+            mm = Integer.parseInt(JOptionPane.showInputDialog(null, "Mes"));
         }while(!(mm>0 & mm<=12));
         do{
-            System.out.print("Año:");
-            yy=Integer.parseInt(consola.readLine());
+            yy = Integer.parseInt(JOptionPane.showInputDialog(null, "Año"));
         }while(!(yy>=2000));
         fecha.set(yy, mm-1, dd);
         do{
-            System.out.println("-----------------------");
-            System.out.println("--LISTA DE PRODUCTOS---");
-            System.out.println("-----------------------");
-            System.out.println("1. AGREGAR A LISTA DE PRODUCTOS");
-            System.out.println("2. SALIR");
+            JOptionPane.showMessageDialog(null, "LISTA DE PRODUCTOS");
             do{
-                System.out.print("Eliga su Opcion:");
-                opcion=Integer.parseInt(consola.readLine());
+                opcion=Integer.parseInt(JOptionPane.showInputDialog(null, "ELIJA SU OPCIÓN\n1. AGREGAR A LISTA DE PRODUCTOS\n2. SALIR"));
             }while(!(opcion>=1 & opcion<=2));
 
             switch(opcion){
                 case 1:
-                    System.out.println("--LISTA DE PRODUCTOS---");
+                    JOptionPane.showMessageDialog(null, "LISTA DE PRODUCTOS");
                     LP.mostrarProducto();
-                    System.out.println("-----------------------");
                     do{
-                        System.out.print("Ingrese producto");
-                        i=Integer.parseInt(consola.readLine());
+                        i =Integer.parseInt( JOptionPane.showInputDialog(null, "Ingrese producto:"));
                     }while(!(i>0 & i<=6));
                     gasto=+objp.getCostoPedido()+LP.getElem()[i-1].getCostoProducto();
                     objp.setCostoPedido(gasto);
@@ -154,12 +128,12 @@ public class AppPedido {
 
     }
     public static void listaProductos(){
-        objpro  = new Producto(1,"pizza francesa $", 15000);
-        objpro1 = new Producto(2,"gaseoa $",4500f);
-        objpro2 = new Producto(3,"helado $",5000f);
-        objpro3 = new Producto(4,"pollo a la braza $",35000f);
-        objpro4 = new Producto(5,"menu $",7000f);
-        objpro5 = new Producto(6,"cafe $",2000f);
+        objpro  = new Producto(1,"Pizza", 12000);
+        objpro1 = new Producto(2,"Hamburguesa",15000);
+        objpro2 = new Producto(3,"Ensalada",5000);
+        objpro3 = new Producto(4,"Gaseosa",3500);
+        objpro4 = new Producto(5,"Papas a la francesa",3000);
+        objpro5 = new Producto(6,"Helado",2000);
         LP.adicionar(objpro);
         LP.adicionar(objpro1);
         LP.adicionar(objpro2);

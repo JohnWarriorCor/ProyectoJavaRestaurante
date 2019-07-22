@@ -6,12 +6,12 @@ package restaurante;
 public class Producto {
     private int codigoProducto;
     private String nombreProducto;
-    private float costoProducto;
+    private int costoProducto;
 
     public Producto(){
 
     }
-    public Producto(int codigo,String nombre,float costo){
+    public Producto(int codigo,String nombre,int costo){
         this.codigoProducto=codigo;
         this.nombreProducto=nombre;
         this.costoProducto=costo;
@@ -37,7 +37,7 @@ public class Producto {
         return costoProducto;
     }
 
-    public void setCostoProducto(float costoProducto) {
+    public void setCostoProducto(int costoProducto) {
         this.costoProducto = costoProducto;
     }
 }

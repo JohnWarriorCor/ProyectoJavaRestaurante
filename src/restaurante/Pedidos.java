@@ -1,6 +1,7 @@
 package restaurante;
 
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 public class Pedidos {
     private int codigoPedido;
@@ -19,8 +20,8 @@ public class Pedidos {
         this.costoPedido=costo;
     }
     public void mostrarDatos(){
-        System.out.println("Codigo: "+ getCodigoPedido()+ "\tFecha: "+mostrarFecha()+
-                "\tCliente: "+getClientePedido()+"\t\tCosto: "+costoTotal());
+        JOptionPane.showMessageDialog(null, "Codigo: "+ getCodigoPedido()+ "\nFecha: "+mostrarFecha()+
+                "\nCliente: "+getClientePedido()+"\nCosto: $"+costoTotal());
     }
 
     public double costoTotal(){

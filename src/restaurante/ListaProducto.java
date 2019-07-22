@@ -1,5 +1,5 @@
 package restaurante;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author GeorgeJason
@@ -30,10 +30,14 @@ public class ListaProducto {
         max+=delta;
     }
     public void mostrarProducto(){
+        String [] menu = new String[6];
         for(int i=0;i<getCantidad();i++){
-            System.out.println("Codigo: "+getElem()[i].getCodigoProducto()+"\tNombre:"+getElem()[i].getNombreProducto()+"\t\t\t\tCosto:"+getElem()[i].getCostoProducto());
+            menu[i] = "Codigo: "+getElem()[i].getCodigoProducto()+"\nNombre: "+getElem()[i].getNombreProducto()+"\n Costo: $"+getElem()[i].getCostoProducto()+"\n======================";
         }
-
+        /*for(String i:menu){
+            System.out.println(i);
+        }*/
+        JOptionPane.showMessageDialog(null, menu );
     }
 
     public Producto[] getElem() {

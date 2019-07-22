@@ -1,5 +1,5 @@
 package restaurante;
-
+import javax.swing.JOptionPane;
 public class ListaPedidos {
     private Pedidos elem[];
     private int cantidad;
@@ -30,14 +30,14 @@ public class ListaPedidos {
     public void reporte1(){
         PedidoDelivery pd;
         PedidoMesa pm;
-        System.out.println("----------DELYVERY---------------");
+        JOptionPane.showMessageDialog(null, "DOMICILIOS");
         for(int i=0; i<cantidad;i++){
             if ((elem[i] instanceof PedidoDelivery)){
                 pd=(PedidoDelivery)elem[i];
                 pd.mostrarPedidosDelivery();
             }
         }
-        System.out.println("---------------MESAS------------");
+        JOptionPane.showMessageDialog(null, "MESA");
         for(int i=0; i<cantidad;i++){
             if ((elem[i] instanceof PedidoMesa)){
                 pm=(PedidoMesa)elem[i];
@@ -64,34 +64,34 @@ public class ListaPedidos {
                 itm=pm.costoTotal()+ itm;
             }
         }
-        System.out.println("Monto total de Mesas:" + itm);
-        System.out.println("monto total en delivery:" + itd);
+        JOptionPane.showMessageDialog(null, "Monto total de Mesas: $" + itm + "\n Monto total en domicilio: $" + itd);
+        System.out.println();
+        System.out.println();
     }
     public void reporte3(){
         PedidoDelivery pd = null;
         PedidoMesa pm = null;
         double iam = 0,iad = 0;
-        System.out.println("=================DELYVERY================");
+        JOptionPane.showMessageDialog(null, "DOMICILIOS");
         for(int i=0; i<cantidad;i++){
             if ((elem[i] instanceof PedidoDelivery)){
                 pd=(PedidoDelivery)elem[i];
                 iad=pd.getCostoEntrega()+ iad;
-                System.out.println("codigo:" + elem[i].getCodigoPedido()+
-                        "\tCosto:"+pd.getCostoEntrega());
+                JOptionPane.showMessageDialog(null, "codigo:" + elem[i].getCodigoPedido()+"\nCosto: $"+pd.getCostoEntrega());
             }
 
         }//ingresos adicionales por propinas
-        System.out.println("gasto adicional en mesa:" + iad);
-        System.out.println("==================MESAS=================");
+        JOptionPane.showMessageDialog(null, "gasto adicional en Mesa: $" + iad);
+        JOptionPane.showMessageDialog(null, "MESA");
         for(int i=0; i<cantidad;i++){
             if ((elem[i] instanceof PedidoMesa)){
                 pm=(PedidoMesa)elem[i];
                 iam=pm.getPropinaMesa()+ iam;
-                System.out.println("codigo:" + elem[i].getCodigoPedido()+
-                        "\tPropina:"+pm.getPropinaMesa());
+                System.out.println();
+                JOptionPane.showMessageDialog(null, "codigo:" + elem[i].getCodigoPedido()+"\nPropina: $"+pm.getPropinaMesa());
             }
 
         }
-        System.out.println("monto adicioonal enDelivery :" + iam);
+        JOptionPane.showMessageDialog(null, "monto adicioonal en Domicilio $:" + iam);
     }
 }
