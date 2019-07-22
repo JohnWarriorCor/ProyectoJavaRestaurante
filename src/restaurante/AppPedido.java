@@ -154,12 +154,12 @@ public class AppPedido {
 
     }
     public static void listaProductos(){
-        objpro  = new Producto(1,"pizza francesa", 30);
-        objpro1 = new Producto(2,"gaseoa",3.0f);
-        objpro2 = new Producto(3,"helado",4.0f);
-        objpro3 = new Producto(4,"pollo a la braza",35.50f);
-        objpro4 = new Producto(5,"menu",7.0f);
-        objpro5 = new Producto(6,"cafe",2.0f);
+        objpro  = new Producto(1,"pizza francesa $", 15000);
+        objpro1 = new Producto(2,"gaseoa $",4500f);
+        objpro2 = new Producto(3,"helado $",5000f);
+        objpro3 = new Producto(4,"pollo a la braza $",35000f);
+        objpro4 = new Producto(5,"menu $",7000f);
+        objpro5 = new Producto(6,"cafe $",2000f);
         LP.adicionar(objpro);
         LP.adicionar(objpro1);
         LP.adicionar(objpro2);
