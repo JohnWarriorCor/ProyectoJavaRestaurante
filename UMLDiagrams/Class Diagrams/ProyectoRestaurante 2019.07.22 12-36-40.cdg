@@ -2,7 +2,7 @@
 
 <ClassDiagram name="EjercicioHerencia1">
   <ClassDiagramComponents>
-    <Class name="AppPedido" package="ejercicioherencia1" visibility="public" xPosition="554.0" yPosition="580.0">
+    <Class name="AppPedido" package="ejercicioherencia1" visibility="public" xPosition="554.0" yPosition="575.0">
       <Fields>
         <Field name="objp" type="Pedidos" visibility="package" isStatic="true"/>
         <Field name="pd" type="PedidoDelivery" visibility="package" isStatic="true"/>
@@ -178,17 +178,17 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="elem" source="ejercicioherencia1.ListaPedidos" target="ejercicioherencia1.Pedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="LPE" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.ListaPedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaPedidos"/>
-    <UseRelation source="ejercicioherencia1.ListaProducto" target="ejercicioherencia1.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="objpro" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="objp" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.Pedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="LP" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.ListaProducto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaProducto"/>
-    <IsRelation name="is" source="ejercicioherencia1.PedidoDelivery" target="ejercicioherencia1.Pedidos"/>
     <IsRelation name="is" source="ejercicioherencia1.PedidoMesa" target="ejercicioherencia1.Pedidos"/>
-    <HasRelation name="elem" source="ejercicioherencia1.ListaProducto" target="ejercicioherencia1.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="ejercicioherencia1.ListaPedidos" target="ejercicioherencia1.Pedidos" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="pd" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.PedidoDelivery" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ejercicioherencia1.ListaProducto" target="ejercicioherencia1.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="elem" source="ejercicioherencia1.ListaPedidos" target="ejercicioherencia1.Pedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="objpro" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="LP" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.ListaProducto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaProducto"/>
     <HasRelation name="pm" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.PedidoMesa" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ejercicioherencia1.PedidoDelivery" target="ejercicioherencia1.Pedidos"/>
+    <UseRelation source="ejercicioherencia1.ListaPedidos" target="ejercicioherencia1.Pedidos" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="objp" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.Pedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="LPE" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.ListaPedidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaPedidos"/>
+    <HasRelation name="elem" source="ejercicioherencia1.ListaProducto" target="ejercicioherencia1.Producto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pd" source="ejercicioherencia1.AppPedido" target="ejercicioherencia1.PedidoDelivery" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

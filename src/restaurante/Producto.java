@@ -1,8 +1,5 @@
 package restaurante;
-/**
- *
- * @author GeorgeJason
- */
+
 public class Producto {
     private int codigoProducto;
     private String nombreProducto;

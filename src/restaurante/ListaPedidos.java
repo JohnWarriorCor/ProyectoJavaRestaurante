@@ -65,8 +65,6 @@ public class ListaPedidos {
             }
         }
         JOptionPane.showMessageDialog(null, "Monto total de Mesas: $" + itm + "\n Monto total en domicilio: $" + itd);
-        System.out.println();
-        System.out.println();
     }
     public void reporte3(){
         PedidoDelivery pd = null;

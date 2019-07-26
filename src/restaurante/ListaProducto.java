@@ -1,9 +1,6 @@
 package restaurante;
 import javax.swing.JOptionPane;
-/**
- *
- * @author GeorgeJason
- */
+
 public class ListaProducto {
     private Producto elem[];
     private int cantidad;

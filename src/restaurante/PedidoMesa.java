@@ -8,6 +8,7 @@ public class PedidoMesa  extends Pedidos{
     public PedidoMesa(){
 
     }
+
     public PedidoMesa(int cod,Calendar fecha,String cliente,double costo){
         super(cod, fecha, cliente, costo);
 

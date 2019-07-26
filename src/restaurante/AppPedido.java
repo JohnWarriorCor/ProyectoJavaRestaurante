@@ -1,14 +1,7 @@
 package restaurante;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author GeorgeJason
- */
 public class AppPedido {
 
     static Pedidos objp = new Pedidos();
@@ -17,12 +10,8 @@ public class AppPedido {
     static Producto objpro,objpro1,objpro2,objpro3,objpro4,objpro5;
     static ListaProducto LP = new ListaProducto();
     static ListaPedidos LPE = new ListaPedidos();
-    static BufferedReader consola= new BufferedReader(new InputStreamReader(System.in));
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         listaProductos();
-        // leerPedido();
-
-        // System.out.print(objp.getCodigoPedido()+"\tcosto"+objp.costoTotal());
         int opc;
         do{
             do{
@@ -48,7 +37,7 @@ public class AppPedido {
             }
         }while(!(opc==5));
     }
-    public static void registro() throws IOException{
+    public static void registro(){
         int op;
         do{
             JOptionPane.showMessageDialog(null, "MENÚ DE PEDIDOS");
@@ -73,17 +62,17 @@ public class AppPedido {
             }
         }while(!(op==3));
     }
-    public static void pedidodelivery() throws IOException{
+    public static void pedidodelivery(){
         objp=new Pedidos();
         leerPedido();
     }
-    public static void pedidoMesa() throws IOException{
+    public static void pedidoMesa(){
         objp=new Pedidos();
         leerPedido();
     }
-    public static void leerPedido() throws IOException{
+    public static void leerPedido(){
         int dd,yy,mm;
-        int i,j;
+        int i;
         int opcion;
         double gasto;
         Calendar fecha=Calendar.getInstance();
